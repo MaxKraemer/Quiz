@@ -1,0 +1,14 @@
+body{
+
+    background-color: black !important;
+}
+
+.container {
+    min-height: 100vh;
+    background-color: black !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
