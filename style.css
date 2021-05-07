@@ -1,14 +1,25 @@
 body{
 
-    background-color: black !important;
+    background-color: rgb(71, 71, 71) !important;
 }
 
 .container {
     min-height: 100vh;
-    background-color: black !important;
+    background-color: rgb(71, 71, 71)  !important;
     display: flex;
     justify-content: center;
     align-items: center;
 
+}
+
+.card {
+
+    width: 30rem;
+}
+
+.question-footer {
+
+    display: flex;
+    justify-content: space-between;
 }
 
