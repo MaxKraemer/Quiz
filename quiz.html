@@ -15,10 +15,11 @@
 
 
 </head>
-<body>
+<body onload="init()">
     <!-- As a heading -->
-  <nav class="navbar navbar-light bg-light">
+  <nav class="navbar navbar-light">
     <div class="container-fluid">
+      <img src="img/miamilogo.jpg">
       <span class="navbar-brand mb-0 h1">Quizapp</span>
     </div>
   </nav>
@@ -26,36 +27,36 @@
   <div class="container">
   
     <div class="card" style="width: 35rem;">
-    <img src="img/background.jpg" class="card-img-top">
+    
     <div class="card-body">
-      <h5 class="card-title">Frage</h5>
+      <h5 class="card-title" id="questionline">Frage</h5>
 
-      <div class="card mb-2">
-        <div class="card-body mb-2">
-          This is some text within a card body.
+      <div class="card quiz-answer-card mb-2" onclick="answer('answer1')"> <!--onclickfunktion für jede einzelne Frage-->
+        <div class="card-body" id="answer1">
+          Antwort
         </div>
       </div>
-      <div class="card mb-2">
-        <div class="card-body">
-          This is some text within a card body.
+      <div class="card quiz-answer-card  mb-2" onclick="answer('answer2')"> <!--onclickfunktion für jede einzelne Frage-->
+        <div class="card-body" id="answer2">
+          Antwort
         </div>
       </div>
-      <div class="card mb-2">
-        <div class="card-body">
-          This is some text within a card body.
+      <div class="card quiz-answer-card  mb-2" onclick="answer('answer3')"> <!--onclickfunktion für jede einzelne Frage-->
+        <div class="card-body" id="answer3">
+          Antwort
         </div>
       </div>
-      <div class="card mb-2">
-        <div class="card-body">
-          This is some text within a card body.
+      <div class="card quiz-answer-card  mb-2" onclick="answer('answer4')"> <!--onclickfunktion für jede einzelne Frage-->
+        <div class="card-body" id="answer4">
+          Antwort
         </div>
       </div>
 
       <div class="question-footer">
         <span>
-        <b>1</b>von <b>5</b>Fragen
+        <b>1</b> von <b id="allQuestions">5</b> Fragen
         </span>
-        <button class="btn btn-secondary">nächste Frage</button>
+        <button type="button" class="btn btn-info">nächste Frage</button>
       </div>
   </div>
 
