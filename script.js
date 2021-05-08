@@ -49,8 +49,8 @@ let currentQuestion = 0;
 
 function init(){
 
-    document.getElementById('allQuestions').innerHTML = questions.length; /* the number of our Questions */
-    showQuestion(); /*onload function to show / showQuestion*/
+    document.getElementById('allQuestions').innerHTML = questions.length; // the number of our Questions 
+    showQuestion(); //onload function to show / showQuestion
 
 }
 
@@ -68,13 +68,17 @@ function showQuestion(){
 
 function answer(selection){
    
-    let question = questions[currentQuestion];
-    
-    console.log('Selected answer is', selection);
+    let question = questions[currentQuestion]; // let currentQuestion = 0;
+    console.log('Selected answer is', selection); //which var we have(function answer(selection))
     let selectQuestionNumber = selection.slice(-1);
     console.log('selectQuestionNumber is', selectQuestionNumber);
-    console.log('Current Question is' question['right_answer']);
+    console.log('Current Question is', question['right_answer']);
 
-    
+    if(selectQuestionNumber == question['right_answer']) { //to show the right answer
+
+        console.log('richtige Antwort!!');
+    } else{
+        console.log('Falsche Antwort!!!');
+    }
 
 }
