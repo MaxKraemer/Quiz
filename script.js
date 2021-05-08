@@ -74,11 +74,14 @@ function answer(selection){
     console.log('selectQuestionNumber is', selectQuestionNumber);
     console.log('Current Question is', question['right_answer']);
 
-    if(selectQuestionNumber == question['right_answer']) { //to show the right answer
+    if(selectQuestionNumber == question['right_answer']) { // if / elso to show the right answer
 
         console.log('richtige Antwort!!');
+        document.getElementById(selection).classList.add('bg-success'); // color change for right answer
     } else{
+        document.getElementById(selection).classList.add('bg-danger'); // color change for right answer
         console.log('Falsche Antwort!!!');
+        
     }
 
 }
