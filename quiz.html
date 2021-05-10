@@ -20,7 +20,7 @@
   <nav class="navbar navbar-light">
     <div class="container-fluid">
       <img src="img/miamilogo.jpg">
-      <span class="navbar-brand mb-0 h1">Quizapp</span>
+      <span class="navbar-brand"><p>QUIZ</p></span>
     </div>
   </nav>
 
@@ -54,9 +54,9 @@
 
       <div class="question-footer">
         <span>
-        <b>1</b> von <b id="allQuestions">5</b> Fragen
+        <b id="question-number">1</b> von <b id="allQuestions">5</b> Fragen
         </span>
-        <button type="button" class="btn btn-info">nächste Frage</button>
+        <button onclick="nextQuestion()" type="button" class="btn btn-success" id="next-button" disabled>nächste Frage</button>
       </div>
   </div>
 

@@ -33,7 +33,7 @@ let questions =[
         "right_answer": 4,
     },
     {
-        "question":"Wie heißt die bekannteste Staße in South Beach?",
+        "question":"Wie heißt die bekannteste Straße in South Beach?",
         "answer1":"Ocean Drive",
         "answer2":"Calle Ocho",
         "answer3":"Biscayne Boulevard",
@@ -49,7 +49,7 @@ let currentQuestion = 0;
 
 function init(){
 
-    document.getElementById('allQuestions').innerHTML = questions.length; // the number of our Questions 
+    document.getElementById('allQuestions').innerHTML = questions.length; // the number of our questions 
     showQuestion(); //onload function to show / showQuestion
 
 }
@@ -58,6 +58,8 @@ function showQuestion(){
 
     let question = questions[currentQuestion];
     
+    document.getElementById('question-number').innerHTML = currentQuestion; // changes number 
+
     document.getElementById('questionline').innerHTML = question['question'];
     document.getElementById('answer1').innerHTML = question['answer1'];
     document.getElementById('answer2').innerHTML = question['answer2'];
@@ -74,14 +76,44 @@ function answer(selection){
     console.log('selectQuestionNumber is', selectQuestionNumber);
     console.log('Current Question is', question['right_answer']);
 
-    if(selectQuestionNumber == question['right_answer']) { // if / elso to show the right answer
 
-        console.log('richtige Antwort!!');
-        document.getElementById(selection).classList.add('bg-success'); // color change for right answer
+    let idOfRightAnswer = `answer${question['right_answer']}`;
+
+    if(selectQuestionNumber == question['right_answer']) { // if / elso to show the right answer 
+        
+        document.getElementById(selection).parentNode.classList.add('bg-success'); // color change for right answer
+     
     } else{
-        document.getElementById(selection).classList.add('bg-danger'); // color change for right answer
-        console.log('Falsche Antwort!!!');
+        
+        document.getElementById(selection).parentNode.classList.add('bg-danger'); // color change for right answer
+        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success'); //show us the right answer if 
         
     }
+
+    document.getElementById('next-button').disabled = false; //disabled the next question button
+
+}
+
+// show the next question //
+    function nextQuestion(){
+
+    currentQuestion++; //is the command for the next question / from 0 to 1 (let currentQuestion = 0;)
+    document.getElementById('next-button').disabled = true; // disabled / reset the button for the next question
+    resetAnswerButtons(); // show / clean the css classes 
+    showQuestion();
+}
+
+// to clean the css classes for the next question
+    function resetAnswerButtons(){
+
+    document.getElementById('answer1').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer1').parentNode.classList.remove('bg-success');
+    document.getElementById('answer2').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer2').parentNode.classList.remove('bg-success');
+    document.getElementById('answer3').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer3').parentNode.classList.remove('bg-success');
+    document.getElementById('answer4').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer4').parentNode.classList.remove('bg-success');
+    
 
 }

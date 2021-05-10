@@ -63,12 +63,7 @@ body{
 
 }
 
-.bg-danger{
-
-    color: white;
-}
-
-.bg-success {
+.navbar-brand p{
 
     color: white;
 }
