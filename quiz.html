@@ -28,7 +28,19 @@
   
     <div class="card" style="width: 33rem;">
     
-    <div class="card-body">
+    <div class="card-body" id="endScreen" style="display: none;">
+
+      <p>Quiz is beendet</p>
+
+      <div><iframe src="https://gifer.com/embed/1DhK" width=480 height=360.000 ></iframe><p><a href="https://gifer.com"></a></p></iframe></div>
+
+      <div class="result">
+         Du hast <b id="answerResults">xxx</b> Fragen von <b id="answer-Result">xxx</b> richtig beantwortet.
+      </div>
+    
+    </div>
+    
+      <div class="card-body" id="question-body">
       <h5 class="card-title" id="questionline">Frage</h5>
 
       <div class="card quiz-answer-card mb-2" onclick="answer('answer1')"> <!--onclickfunktion für jede einzelne Frage-->

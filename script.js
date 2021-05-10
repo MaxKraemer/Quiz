@@ -1,4 +1,4 @@
-let questions =[
+let questions =[ //JSON array
     
     {
         "question":"In welchen Jahr wurde Miami gegründet?",
@@ -56,16 +56,27 @@ function init(){
 
 function showQuestion(){
 
+    // show the end of the quiz 
+    if (currentQuestion >= questions.length){
+
+        document.getElementById('endScreen').style = '';
+        document.getElementById('question-body').style = 'display: none';
+    
+    } else{
+
     let question = questions[currentQuestion];
     
-    document.getElementById('question-number').innerHTML = currentQuestion; // changes number 
+    document.getElementById('question-number').innerHTML = currentQuestion +1; // change the questionnumber 
+    
+    
 
     document.getElementById('questionline').innerHTML = question['question'];
     document.getElementById('answer1').innerHTML = question['answer1'];
     document.getElementById('answer2').innerHTML = question['answer2'];
     document.getElementById('answer3').innerHTML = question['answer3'];
     document.getElementById('answer4').innerHTML = question['answer4'];
-
+    
+    }
 }
 
 function answer(selection){

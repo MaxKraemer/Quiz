@@ -2,6 +2,8 @@ body{
 
     background-image: url(img/background.jpg);
     background-size: cover;
+    height: 100%;
+    width: 100%;
     
 }
 
@@ -44,6 +46,11 @@ body{
     
 }
 
+.result {
+
+    text-align: center;
+}
+
 
 .card-body span{
 
@@ -68,5 +75,26 @@ body{
     color: white;
 }
 
+.card-body p{
 
+    font-size: 20px;
+    text-align: center;
+}
 
+.width-100{
+
+    width: 100%;
+}
+
+@media (max-width: 1000px) {
+
+    body {
+
+        width: 100%;
+    }
+
+    .quiz-answer-card {
+
+        width: 100%;
+    }
+}
