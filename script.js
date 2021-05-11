@@ -41,7 +41,7 @@ let questions =[ //JSON array
         "right_answer": 1,
     },
     {
-        "question":"Wie lautet die Vorwahl vomn Miami?",
+        "question":"Wie lautet die Vorwahl von Miami?",
         "answer1":"303",
         "answer2":"304",
         "answer3":"305",
@@ -57,7 +57,7 @@ let questions =[ //JSON array
         "right_answer": 2,
     },
     {
-        "question":"Welchen kulturelen Einfluß hat Miami?",
+        "question":"Welchen kulturellen Einfluss hat Miami?",
         "answer1":"irischen",
         "answer2":"mexikanischen",
         "answer3":"cubanischen",
@@ -71,6 +71,14 @@ let questions =[ //JSON array
         "answer3":"Star Island",
         "answer4":"Rising Star Island",
         "right_answer": 3,
+    },
+    {
+        "question":"Welcher dieser Filme wurde in Miami gedreht?",
+        "answer1":"Bad Boys",
+        "answer2":"Last Action Hero",
+        "answer3":"Stirb Langsam",
+        "answer4":"Fast and Furious",
+        "right_answer": 1,
     }
 
 ]
