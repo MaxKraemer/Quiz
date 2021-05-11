@@ -40,12 +40,45 @@ let questions =[ //JSON array
         "answer4":"Don Shula Drive",
         "right_answer": 1,
     },
-  
+    {
+        "question":"Wie lautet die Vorwahl vomn Miami?",
+        "answer1":"303",
+        "answer2":"304",
+        "answer3":"305",
+        "answer4":"306",
+        "right_answer": 3,
+    },
+    {
+        "question":"Wie heißt der Hafen von Miami?",
+        "answer1":"Pearl Harbor",
+        "answer2":"Port of Miami",
+        "answer3":"New York Harbor",
+        "answer4":"Boston Harbor",
+        "right_answer": 2,
+    },
+    {
+        "question":"Welchen kulturelen Einfluß hat Miami?",
+        "answer1":"irischen",
+        "answer2":"mexikanischen",
+        "answer3":"cubanischen",
+        "answer4":"asiatischen",
+        "right_answer": 3,
+    },
+    {
+        "question":"Wie heißt die Celebrity Insel in Miami?",
+        "answer1":"Celebrity Island",
+        "answer2":"Hollywood Island",
+        "answer3":"Star Island",
+        "answer4":"Rising Star Island",
+        "right_answer": 3,
+    }
+
 ]
 
 /* onload section show the questions and the answers*/
 
 let currentQuestion = 0;
+let rightQuestions = 0;
 
 function init(){
 
@@ -58,25 +91,24 @@ function showQuestion(){
 
     // show the end of the quiz 
     if (currentQuestion >= questions.length){
-
-        document.getElementById('endScreen').style = '';
-        document.getElementById('question-body').style = 'display: none';
-    
+        
+        showEndScreen();
+      
     } else{
 
-    let question = questions[currentQuestion];
-    
-    document.getElementById('question-number').innerHTML = currentQuestion +1; // change the questionnumber 
-    
-    
-
-    document.getElementById('questionline').innerHTML = question['question'];
-    document.getElementById('answer1').innerHTML = question['answer1'];
-    document.getElementById('answer2').innerHTML = question['answer2'];
-    document.getElementById('answer3').innerHTML = question['answer3'];
-    document.getElementById('answer4').innerHTML = question['answer4'];
-    
+        showNextQuestion();
     }
+}
+
+function showEndScreen(){
+
+    document.getElementById('endScreen').style = '';
+    document.getElementById('question-body').style = 'display: none';
+    
+    document.getElementById('answer-Result').innerHTML = questions.length;
+    document.getElementById('answerResults').innerHTML = rightQuestions;
+
+
 }
 
 function answer(selection){
@@ -93,7 +125,8 @@ function answer(selection){
     if(selectQuestionNumber == question['right_answer']) { // if / elso to show the right answer 
         
         document.getElementById(selection).parentNode.classList.add('bg-success'); // color change for right answer
-     
+        rightQuestions++; // is the command for the number of right questions / let rightQuestions
+    
     } else{
         
         document.getElementById(selection).parentNode.classList.add('bg-danger'); // color change for right answer
@@ -106,7 +139,7 @@ function answer(selection){
 }
 
 // show the next question //
-    function nextQuestion(){
+function nextQuestion(){
 
     currentQuestion++; //is the command for the next question / from 0 to 1 (let currentQuestion = 0;)
     document.getElementById('next-button').disabled = true; // disabled / reset the button for the next question
@@ -115,7 +148,7 @@ function answer(selection){
 }
 
 // to clean the css classes for the next question
-    function resetAnswerButtons(){
+function resetAnswerButtons(){
 
     document.getElementById('answer1').parentNode.classList.remove('bg-danger');
     document.getElementById('answer1').parentNode.classList.remove('bg-success');
@@ -126,5 +159,38 @@ function answer(selection){
     document.getElementById('answer4').parentNode.classList.remove('bg-danger');
     document.getElementById('answer4').parentNode.classList.remove('bg-success');
     
+
+}
+
+function showNextQuestion(){
+
+    let percent = (currentQuestion +1) / questions.length;  // progressbar
+    percent = percent * 100;
+    document.getElementById('progress-bar').innerHTML = `${percent} %`;
+    document.getElementById('progress-bar').style =`width: ${percent}%;`;
+
+    let question = questions[currentQuestion];
+
+    document.getElementById('question-number').innerHTML = currentQuestion +1; // change the questionnumber 
+
+
+    document.getElementById('questionline').innerHTML = question['question'];
+    document.getElementById('answer1').innerHTML = question['answer1'];
+    document.getElementById('answer2').innerHTML = question['answer2'];
+    document.getElementById('answer3').innerHTML = question['answer3'];
+    document.getElementById('answer4').innerHTML = question['answer4'];
+
+}
+
+// restart Game 
+function restartGame(){
+
+    document.getElementById('question-body').style = ''; 
+    document.getElementById('endScreen').style = 'display: none';
+    document.getElementById('')
+    currentQuestion = 0; //var to set of zero
+    rightQuestions = 0; //var to set of zero
+    init(); //onloadfunction to reset
+
 
 }

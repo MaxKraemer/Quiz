@@ -30,12 +30,16 @@
     
     <div class="card-body" id="endScreen" style="display: none;">
 
-      <p>Quiz is beendet</p>
+      <p>Quiz ist beendet!</p>
 
-      <div><iframe src="https://gifer.com/embed/1DhK" width=480 height=360.000 ></iframe><p><a href="https://gifer.com"></a></p></iframe></div>
+      <div><iframe src="https://gifer.com/embed/1DhK" height="330px"></iframe><p><a href="https://gifer.com"></a></p></iframe></div>
 
       <div class="result">
          Du hast <b id="answerResults">xxx</b> Fragen von <b id="answer-Result">xxx</b> richtig beantwortet.
+      </div>
+      
+      <div class="button-newgame">
+      <button onclick="restartGame()" type="button" class="btn btn-success" id="restartButton">Erneut Spielen!</button>
       </div>
     
     </div>
@@ -48,7 +52,7 @@
           Antwort
         </div>
       </div>
-      <div class="card quiz-answer-card  mb-2" onclick="answer('answer2')"> <!--onclickfunktion für jede einzelne Frage-->
+      <div class="card quiz-answer-card mb-2" onclick="answer('answer2')"> <!--onclickfunktion für jede einzelne Frage-->
         <div class="card-body" id="answer2">
           Antwort
         </div>
@@ -62,6 +66,10 @@
         <div class="card-body" id="answer4">
           Antwort
         </div>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" id="progress-bar" role="progressbar" style="width: 0%;"></div>
       </div>
 
       <div class="question-footer">

@@ -51,6 +51,12 @@ body{
     text-align: center;
 }
 
+.card-body{
+
+    font-size: 20px;
+    text-align: center;
+    
+}
 
 .card-body span{
 
@@ -73,6 +79,7 @@ body{
 .navbar-brand p{
 
     color: white;
+    font-size: 35px;
 }
 
 .card-body p{
@@ -86,6 +93,39 @@ body{
     width: 100%;
 }
 
+.button-newgame{
+
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    
+}
+
+.question-footer button{
+
+    background-color: #0dcaf0 !important;
+}
+
+.progress-bar {
+
+    background-color: #0dcaf0 !important;
+}
+
+.bg-success {
+
+    background: lightgreen !important;
+}
+
+.question-footer {
+
+    padding-top: 20px;
+}
+
+.btn btn-success{
+
+    background-color: lime !important;
+}
+
 @media (max-width: 1000px) {
 
     body {
@@ -97,4 +137,13 @@ body{
 
         width: 100%;
     }
+
+    .navbar-brand p{
+
+        color: white;
+        font-size: 35px;
+    }
+    
+
 }
+
